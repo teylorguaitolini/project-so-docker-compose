@@ -16,6 +16,7 @@ The `docker-compose.yml` file is used to define and orchestrate the containers, 
 This project aims to provide a scalable and modular architecture for developing and deploying a full-stack application using Docker. 
 
 ## Architecture
+```
 project-so-docker-compose/
 ├── bd/
 │   ├── Dockerfile
@@ -29,6 +30,7 @@ project-so-docker-compose/
 │   ├── requirements.txt
 │   ├── Dockerfile
 ├── docker-compose.yml
+```
 
 ## Cloning and Starting the Application
 
