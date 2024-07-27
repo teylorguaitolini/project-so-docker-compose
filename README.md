@@ -1,8 +1,7 @@
 # project-so-docker-compose
-
-## Project Description
 This project is being developed as a homework assignment for the discipline of Operating Systems in the Control and Automation Engineering course at the Federal Institute of Education, Science, and Technology of Espírito Santo (IFES).
 
+## Project Description
 This project is a multi-container application built using Docker Compose. It consists of three main components: a database, an API, and a front-end. 
 
 The `db` directory contains the Dockerfile and initialization SQL script for the database. 
@@ -18,7 +17,7 @@ This project aims to provide a scalable and modular architecture for developing 
 ## Architecture
 ```
 project-so-docker-compose/
-├── bd/
+├── db/
 │   ├── Dockerfile
 │   ├── init.sql
 ├── api/
@@ -63,7 +62,5 @@ To clone and start the application, follow these steps:
 6. Wait for the containers to start and for the application to be fully initialized.
 
 7. Once the application is running, you can access it by opening a web browser and navigating to `http://localhost:8501`.
-
-    Note: The specific port may vary depending on your configuration.
 
 That's it! You have successfully cloned and started the application using Docker Compose.
