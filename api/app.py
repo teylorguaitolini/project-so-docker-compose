@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import mysql.connector
 from mysql.connector import Error
+import os
 
 app = Flask(__name__)
 
@@ -8,10 +9,10 @@ def create_connection():
     connection = None
     try:
         connection = mysql.connector.connect(
-            host="car_database",
-            user="user",
-            password="userpassword",
-            database="cars_db"
+            host=os.getenv("DB_HOST", "localhost"),
+            user=os.getenv("DB_USER", "user"),
+            password=os.getenv("DB_PASSWORD", "userpassword"),
+            database=os.getenv("DB_NAME", "cars_db")
         )
     except Error as e:
         print(f"The error '{e}' occurred")

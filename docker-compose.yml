@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  db:
+    build: ./db
+    container_name: car_database
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cars_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  api:
+    build: ./api
+    container_name: car_api
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=user
+      - DB_PASSWORD=userpassword
+      - DB_NAME=cars_db
+    ports:
+      - "5000:5000"
+
+  front:
+    build: ./front
+    container_name: car_frontend
+    depends_on:
+      - api
+    ports:
+      - "8501:8501"
+
+volumes:
+  db_data:
