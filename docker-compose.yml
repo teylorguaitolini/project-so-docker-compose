@@ -4,6 +4,7 @@ services:
   db:
     build: ./db
     container_name: car_database
+    image: teylorguaitolini/car_database:latest
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: cars_db
@@ -17,6 +18,7 @@ services:
   api:
     build: ./api
     container_name: car_api
+    image: teylorguaitolini/car_api:latest
     depends_on:
       - db
     environment:
@@ -30,6 +32,7 @@ services:
   front:
     build: ./front
     container_name: car_frontend
+    image: teylorguaitolini/car_frontend:latest
     depends_on:
       - api
     ports:
